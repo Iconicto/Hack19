@@ -51,3 +51,18 @@ class Query(graphene.ObjectType):
         if id is not None:
             return Event.objects.get(pk=id)
         return None
+
+    def resolve_news(self, info, **kwargs):
+        return News.objects.all()
+
+    def resolve_events(self, info, **kwargs):
+        return Event.objects.all()
+
+    def resolve_tutorials(self, info, **kwargs):
+        return Tutorial.objects.all()
+
+    def resolve_communities(self, info, **kwargs):
+        return Community.objects.all()
+
+    def resolve_widgets(self, info, **kwargs):
+        return Widget.objects.all()
