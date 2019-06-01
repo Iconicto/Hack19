@@ -9,12 +9,12 @@ class SourceAdmin(admin.ModelAdmin):
 
 
 class EventsAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name', 'description', 'time', 'link', 'source', 'image',)
+    list_display = ('id', 'name', 'venue', 'date', 'description', 'registration_link')
     list_display_links = list_display
 
 
 class TutorialAdmin(admin.ModelAdmin):
-    list_display = ('id', 'title', 'author', 'published_date', 'registration_link', 'source')
+    list_display = ('id', 'title', 'author', 'published_date', 'link', 'source')
     list_display_links = list_display
 
 

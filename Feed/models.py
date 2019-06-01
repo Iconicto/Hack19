@@ -37,7 +37,7 @@ class Tutorial(models.Model):
     title = models.CharField(max_length=150)
     author = models.DateField()
     published_date = models.DateField()
-    registration_link = models.URLField()
+    link = models.URLField()
     source = models.ForeignKey(Source, on_delete=models.DO_NOTHING, related_name='TutorialSource')
 
     def __str__(self):
