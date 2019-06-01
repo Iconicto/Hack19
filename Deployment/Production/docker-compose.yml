@@ -16,7 +16,7 @@ services:
     environment:
       POSTGRES_PASSWORD: ${PGPASSWORD}
     volumes:
-      - postgres-data:/var/lib/postgresql/data
+      - postgres-hack19:/var/lib/postgresql/data
   hack19_web:
     container_name: Hack19-Django
     build:
@@ -38,5 +38,5 @@ services:
     depends_on:
       - hack19_db
 volumes:
-  postgres-data:
+  postgres-hack19:
     driver: local
