@@ -15,7 +15,7 @@ class Post(models.Model):
     description = models.TextField(blank=True, null=True)
     time = models.DateField(auto_now=True)
     link = models.URLField()
-    source = models.ForeignKey(Source, on_delete=models.DO_NOTHING, related_name='Source')
+    source = models.ForeignKey(Source, on_delete=models.DO_NOTHING, related_name='PostSource')
     image = models.ImageField(upload_to='Post/', blank=True, null=True)
 
     def __str__(self):
@@ -38,7 +38,7 @@ class Tutorial(models.Model):
     author = models.DateField()
     published_date = models.DateField()
     registration_link = models.URLField()
-    source = models.ForeignKey(Source, on_delete=models.DO_NOTHING, related_name='Source')
+    source = models.ForeignKey(Source, on_delete=models.DO_NOTHING, related_name='TutorialSource')
 
     def __str__(self):
         return self.title
