@@ -26,7 +26,7 @@ class Event(models.Model):
     name = models.CharField(max_length=150)
     venue = models.CharField(max_length=350)
     date = models.DateField()
-    time = models.DateTimeField()
+    time = models.TimeField()
     description = models.TextField(blank=True, null=True)
     registration_link = models.URLField()
 
