@@ -99,7 +99,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'postgres',
         'USER': 'postgres',
-        'HOST': 'Hack19_db',
+        'HOST': 'hack19_db',
         'PASSWORD': os.getenv('PGPASSWORD'),
         'PORT': 5432,
     }
