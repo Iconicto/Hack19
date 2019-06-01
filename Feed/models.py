@@ -15,7 +15,7 @@ class News(models.Model):
     time = models.DateTimeField(auto_now=True)
     link = models.URLField()
     source = models.ForeignKey(Source, on_delete=models.DO_NOTHING, related_name='NewsSource')
-    image = models.ImageField(upload_to='Post/', blank=True, null=True)
+    image = models.ImageField(upload_to='News/', blank=True, null=True)
 
     def __str__(self):
         return self.title
@@ -24,10 +24,12 @@ class News(models.Model):
 class Event(models.Model):
     name = models.CharField(max_length=150)
     venue = models.CharField(max_length=350)
+    organizer = models.CharField(max_length=350)
     date = models.DateField()
     time = models.TimeField()
     description = models.TextField(blank=True, null=True)
     registration_link = models.URLField()
+    banner = models.ImageField(upload_to='Event/Banner')
 
     def __str__(self):
         return self.name
@@ -57,7 +59,7 @@ class Community(models.Model):
 class Widget(models.Model):
     name = models.CharField(max_length=150)
     description = models.TextField(blank=True, null=True)
-    image = models.ImageField(upload_to='Post/', blank=True, null=True)
+    image = models.ImageField(upload_to='Widget/', blank=True, null=True)
     link = models.URLField()
 
     def __str__(self):

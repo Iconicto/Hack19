@@ -28,12 +28,26 @@ class CommunityType(DjangoObjectType):
 
 class WidgetType(DjangoObjectType):
     class Meta:
-        model = Community
+        model = Widget
+
+
+class SourceType(DjangoObjectType):
+    class Meta:
+        model = Source
+        exclude_fields = ('NewsSource', 'TutorialSource',)
 
 
 class Query(graphene.ObjectType):
+    event = graphene.Field(EventType, id=graphene.ID(required=True))
+
     news = graphene.List(NewsType)
     events = graphene.List(EventType)
     tutorials = graphene.List(TutorialType)
     communities = graphene.List(CommunityType)
-    widget = graphene.List(WidgetType)
+    widgets = graphene.List(WidgetType)
+
+    def resolve_event(self, info, **kwargs):
+        id = kwargs.get('id')
+        if id is not None:
+            return Event.objects.get(pk=id)
+        return None
