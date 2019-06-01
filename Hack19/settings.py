@@ -36,7 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'graphene_django',
-    'Hack19.Feed',
+    'Feed',
     'storages',
     'corsheaders',
     'django_filters',
