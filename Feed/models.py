@@ -22,7 +22,7 @@ class Post(models.Model):
         return self.name
 
 
-class Events(models.Model):
+class Event(models.Model):
     name = models.CharField(max_length=150)
     venue = models.CharField(max_length=350)
     date = models.DateField()
@@ -44,11 +44,10 @@ class Tutorial(models.Model):
         return self.title
 
 
-class Communities(models.Model):
+class Community(models.Model):
     name = models.CharField(max_length=150)
-    author = models.DateField()
     description = models.TextField(blank=True, null=True)
-    irc_link = models.URLField()
+    irc_link = models.URLField(blank=True, null=True)
     community_link = models.URLField()
 
     def __str__(self):
