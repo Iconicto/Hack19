@@ -10,16 +10,15 @@ class Source(models.Model):
         return self.name
 
 
-class Post(models.Model):
-    name = models.CharField(max_length=150)
-    description = models.TextField(blank=True, null=True)
-    time = models.DateField(auto_now=True)
+class News(models.Model):
+    title = models.CharField(max_length=350)
+    time = models.DateTimeField(auto_now=True)
     link = models.URLField()
-    source = models.ForeignKey(Source, on_delete=models.DO_NOTHING, related_name='PostSource')
+    source = models.ForeignKey(Source, on_delete=models.DO_NOTHING, related_name='NewsSource')
     image = models.ImageField(upload_to='Post/', blank=True, null=True)
 
     def __str__(self):
-        return self.name
+        return self.title
 
 
 class Event(models.Model):
@@ -36,7 +35,7 @@ class Event(models.Model):
 
 class Tutorial(models.Model):
     title = models.CharField(max_length=150)
-    author = models.DateField()
+    author = models.CharField(max_length=200)
     published_date = models.DateField()
     link = models.URLField()
     source = models.ForeignKey(Source, on_delete=models.DO_NOTHING, related_name='TutorialSource')
@@ -54,6 +53,15 @@ class Community(models.Model):
     def __str__(self):
         return self.name
 
+
+class Widget(models.Model):
+    name = models.CharField(max_length=150)
+    description = models.TextField(blank=True, null=True)
+    image = models.ImageField(upload_to='Post/', blank=True, null=True)
+    link = models.URLField()
+
+    def __str__(self):
+        return self.name
 
 
 

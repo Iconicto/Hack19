@@ -23,7 +23,19 @@ class CommunityAdmin(admin.ModelAdmin):
     list_display_links = list_display
 
 
+class WidgetAdmin(admin.ModelAdmin):
+    list_display = ('name', 'description', 'image', 'link')
+    list_display_links = list_display
+
+
+class NewsAdmin(admin.ModelAdmin):
+    list_display = ('title', 'time', 'link', 'source', 'image')
+    list_display_links = list_display
+
+
 admin.site.register(Source, SourceAdmin)
 admin.site.register(Event, EventAdmin)
 admin.site.register(Tutorial, TutorialAdmin)
 admin.site.register(Community, CommunityAdmin)
+admin.site.register(News, NewsAdmin)
+admin.site.register(Widget, WidgetAdmin)
