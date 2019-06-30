@@ -1,15 +1,15 @@
 version: '3'
 
 services:
-  hack19_db:
+  everythingflutter_db:
     image: postgres
-    container_name: Hack19-Postgres-Development
+    container_name: everythingflutter-Postgres-Development
     environment:
       POSTGRES_PASSWORD: ${PGPASSWORD}
     volumes:
-      - postgres-hack19:/var/lib/postgresql/data
-  hack19_web:
-    container_name: Hack19-Django-Development
+      - postgres-everythingflutter:/var/lib/postgresql/data
+  everythingflutter_web:
+    container_name: everythingflutter-Django-Development
     build:
       context: ../../
       dockerfile: Deployment/Development/Dockerfile
@@ -29,7 +29,7 @@ services:
     ports:
       - "8000:8000"
     depends_on:
-      - hack19_db
+      - everythingflutter_db
 volumes:
-  postgres-hack19:
+  postgres-everythingflutter:
     driver: local

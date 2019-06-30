@@ -19,12 +19,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'u=^o$lo1%d)f5^rynl@o4pz)oo92=18l3guislik0iq2j+_x*6'
+SECRET_KEY = os.getenv('DJANGO_SECRET')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG') == 'True'
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'hack19.iconicto.com', '0.0.0.0', 'cdn.iconicto.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1',
+                 'everythingflutter.iconicto.com', '0.0.0.0', 'cdn.iconicto.com']
 
 # Application definition
 
@@ -64,13 +65,12 @@ CORS_ORIGIN_ALLOW_ALL = True
 #     "http://cdn.iconicto.com",
 # ]
 
-ROOT_URLCONF = 'Hack19.urls'
+ROOT_URLCONF = 'everythingflutter.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')]
-        ,
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -83,7 +83,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'Hack19.wsgi.application'
+WSGI_APPLICATION = 'everythingflutter.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
@@ -98,10 +98,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'postgres',
-        'USER': 'postgres',
-        'HOST': 'hack19_db',
+        'USER': os.getenv('PGUSER'),
+        'HOST': os.getenv('PGHOST'),
         'PASSWORD': os.getenv('PGPASSWORD'),
-        'PORT': 5432,
+        'PORT': os.getenv('PGPORT'),
     }
 }
 
@@ -146,17 +146,17 @@ AWS_S3_ENDPOINT_URL = os.getenv('S3_ENDPOINT_URL')
 AWS_S3_OBJECT_PARAMETERS = {
     'CacheControl': 'max-age=86400',
 }
-AWS_LOCATION = 'Hack19'
+AWS_LOCATION = 'everythingflutter'
 
-DEFAULT_FILE_STORAGE = 'Hack19.storage_backends.MediaStorage'
+DEFAULT_FILE_STORAGE = 'everythingflutter.storage_backends.MediaStorage'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'Hack19/static'),
+    os.path.join(BASE_DIR, 'everythingflutter/static'),
 ]
 AWS_S3_CUSTOM_DOMAIN = os.getenv('CDN')
 STATIC_URL = 'https://%s/%s/' % (os.getenv('CDN'), AWS_LOCATION)
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 GRAPHENE = {
-    'SCHEMA': 'Hack19.schema.schema',
+    'SCHEMA': 'everythingflutter.schema.schema',
 }
