@@ -2,6 +2,8 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
+imprort numpy
+import tesorflow as tf
 
 
 def main():
