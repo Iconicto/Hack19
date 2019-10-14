@@ -27,8 +27,9 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About Hacktoberfest
-
-<img src="https://hacktoberfest19.ucscmozilla.com/img/hflogo.svg" href="https://hacktoberfest.digitalocean.com" height="300">
+<center>
+  <img src="https://hacktoberfest19.ucscmozilla.com/img/hflogo.svg" href="https://hacktoberfest.digitalocean.com" height="300">
+</center>
 
 Hacktoberfest is a month-long celebration of open source software run by DigitalOcean and DEV. Hacktoberfest is open to everyone in our global community. To participate, four pull requests must be submitted to public GitHub repositories. You can sign up anytime between October 1 and October 31.
 
