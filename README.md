@@ -16,11 +16,9 @@
     <br />
     <img src="https://img.shields.io/badge/-HTML-brightgreen">
     ·
-    ![Project Image](https://img.shields.io/badge/-HTML-orange)
-    ·
-    ![Project Image](https://img.shields.io/badge/-CSS-blue)
+    <img src="https://img.shields.io/badge/-CSS-blue">
     .
-    ![Project Image](https://img.shields.io/badge/-JS-purple)
+    <img src="https://img.shields.io/badge/-JS-blueviolet">
   </p>
 </p>
 
