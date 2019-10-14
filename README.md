@@ -14,7 +14,7 @@
     <a href="https://hacktoberfest19.ucscmozilla.com/"><strong>View Website »</strong></a>
     <br />
     <br />
-    [![Project Image](https://img.shields.io/badge/-web-green)]
+    ![https://img.shields.io/badge/-HTML-brightgreen]
     ·
     ![Project Image](https://img.shields.io/badge/-HTML-orange)
     ·
