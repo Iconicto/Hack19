@@ -3,7 +3,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/UCSC-Mozilla-Club">
-    <img src="https://hacktoberfest19.ucscmozilla.com/img/UCSCMozillaLogo.png" alt="UCSC Mozila Logo" width="80" height="80">
+    <img src="https://hacktoberfest19.ucscmozilla.com/img/UCSCMozillaLogo.png" alt="UCSC Mozila Logo" width="100" height="100">
   </a>
 
   <h3 align="center">Hacktoberfest 2019 Celebrations</h3>
@@ -27,9 +27,9 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About Hacktoberfest
-<center>
+<p align="center">
   <img src="https://hacktoberfest19.ucscmozilla.com/img/hflogo.svg" href="https://hacktoberfest.digitalocean.com" height="300">
-</center>
+</p>
 
 Hacktoberfest is a month-long celebration of open source software run by DigitalOcean and DEV. Hacktoberfest is open to everyone in our global community. To participate, four pull requests must be submitted to public GitHub repositories. You can sign up anytime between October 1 and October 31.
 
