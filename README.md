@@ -15,9 +15,9 @@
     <br />
     <br />
     <img src="https://img.shields.io/badge/-HTML-brightgreen">
-    ·
+    *
     <img src="https://img.shields.io/badge/-CSS-blue">
-    .
+    *
     <img src="https://img.shields.io/badge/-JS-blueviolet">
   </p>
 </p>
